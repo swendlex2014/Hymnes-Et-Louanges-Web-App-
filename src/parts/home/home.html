@@ -1,0 +1,170 @@
+ <section id="content">
+
+   <div class="section notopmargin nobottommargin">
+     <div class="container clearfix">
+
+       <div class="col_half nobottommargin topmargin col_last">
+
+        <div class="heading-block">
+          <h2>Hymnes &amp; Louanges</h2>
+          <span>Chants &Eacute;vang&eacute;liques des Eglises Adventistes du Septi&egrave;me jour.</span>
+        </div>
+
+        <p><em>Ne vous enivrez pas de vin: c'est de la d&eacute;bauche. Soyez, au contraire, remplis de l'Esprit; <br>
+          entretenez-vous par des psaumes, par des hymnes, et par des cantiques spirituels, chantant et c&eacute;l&eacute;brant de tout votre coeur les louanges du Seigneur; <br>
+          rendez continuellement gr&acirc;ces pour toutes choses &agrave; Dieu le P&egrave;re, au nom de notre Seigneur J&eacute;sus Christ.</em><br>
+          <strong><em>&Eacute;phesiens 5: 18-20</em></strong>
+        </p>
+        <div class="input-group input-group-lg" style="max-width:400px;">
+          <input class="form-control lookupsong" maxlength="3" ng-pattern="numOnly" ng-pattern-restrict type="text" ng-model="num" value="" placeholder="Entrez Un Num&eacute;ro">
+          <span class="input-group-btn">
+           <button class="btn btn-default" ng-click="goToChant()">Chanter</button>
+         </span>
+       </div>
+     </div>
+
+     <div class="col_half nobottommargin topmargin-lg">
+
+      <img src="img/home/magazine.png" alt="Image" class="center-block">
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="section dark notopmargin nobottommargin">
+  <div class="container  clearfix">
+
+   <div class="col_half nobottommargin topmargin-lg">
+
+    <img src="img/home/alpha.png" alt="Image" class="center-block">
+
+  </div>
+
+  <div class="col_half nobottommargin topmargin-lg col_last">
+
+    <div class="heading-block topmargin-lg">
+     <h2>Index Alphab&eacute;tique</h2>
+     <span>Table des mati&egrave;res</span>
+   </div>
+
+   <p>Vous pouvez rechercher tous les chansons a partir de la table des mati&egrave;res. La table des matières alphab&eacute;tique est arrang&eacute; en ordre crossaint.</p>
+
+   <a ng-href="alphabet/A" class="button button-border button-rounded button-large button-dark noleftmargin">A - Z</a>
+
+ </div>
+
+</div>
+</div>
+
+<div class="section notopmargin nobottommargin">
+  <div class="container clearfix">
+
+   <div class="col_half nobottommargin topmargin-lg col_last">
+
+    <div class="heading-block topmargin-lg">
+     <h2>Index Num&eacute;rique</h2>
+     <span>Table des mati&egrave;res</span>
+   </div>
+
+   <p>Vous pouvez aussi rechercher tous les chansons a partir de la table des mati&egrave;res numérique. Les numéros sont groupés par cinquantaine. </p>
+
+   <a href="numero/1" class="button button-border button-rounded button-large button-dark noleftmargin">1 - 654</a>
+
+ </div>
+
+ <div class="col_half nobottommargin topmargin-lg">
+
+  <img src="img/home/num.png" alt="Image" class="center-block">
+
+</div>
+
+</div>
+</div>
+
+<div class="section dark notopmargin nobottommargin">
+  <div class="container  clearfix">
+
+   <div class="col_half nobottommargin topmargin-lg">
+
+    <img src="img/home/full.png" alt="Image" class="center-block">
+
+  </div>
+
+  <div class="col_half nobottommargin topmargin-lg col_last">
+
+    <div class="heading-block topmargin-lg">
+     <h2>Mode Plein &Eacute;cran</h2>
+     <span>Presentation des Hymnes.</span>
+   </div>
+
+   <p>Vous pouvez voir toutes les chansons en mode plein &eacute;cran. Pour voir un diaporama pour une chanson tout simplement cliquez sur l\'ic&ocirc;ne de diaporama &agrave; partir de la page des chansons. Vous pouvez &eacute;galement s&eacute;lectionner plusieurs chansons pour une seule pr&eacute;sentation.</p>
+    
+   <div class="input-group input-group-lg" style="max-width:400px;">
+          <input class="form-control diaporama" type="text" maxlength="3" ng-pattern="numOnly" ng-pattern-restrict ng-model="slide" value="" placeholder="Entrez Un Num&eacute;ro">
+          <span class="input-group-btn" >
+           <a class="btn btn-default" ng-show="slide.length > 0" href="plein/{{slide}}" target="_blank">Diaporama</a>
+         </span>
+       </div>
+
+ </div>
+
+
+</div>
+</div>
+
+
+<div class="section notopmargin nobottommargin">
+  <div class="container clearfix">
+
+   <div class="col_half nobottommargin topmargin-lg col_last">
+
+    <div class="heading-block topmargin-lg">
+     <h2>Cr&eacute;ation des listes</h2>
+     <span>Mode Plein &Eacute;cran</span>
+   </div>
+
+   <div class="table-responsive" ng-show="chant.length > 0">
+    <table class="table">
+     <thead>
+      <tr>
+       <th>#</th>
+       <th>Titre</th>
+       <th>Supprimer</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr ng-repeat="w in chant">
+      <td>{{w.n}}</td>
+      <td>{{w.title}}</td>
+      <td><a ng-click="removeIndex($index)"><i class="icon-line-delete"></i></a></td>
+    </tr>
+  </tbody>
+</table>
+</div><!-- /.table-responsive -->
+
+
+
+<div class="input-group input-group-lg topmargin" style="max-width:400px;">
+ <input class="form-control addtolist" maxlength="100" ng-pattern="numCommas" ng-pattern-restrict type="text" type="text" ng-model="add" value="" placeholder="21,25,410-414">
+ <span class="input-group-btn">
+  <button class="btn btn-default" ng-click="addToList()">Ajouter</button>
+</span>
+</div>
+
+<a ng-show="chant.length > 0" ng-click="clearList()" target="_blank" class="button button-border button-rounded button-large button-dark noleftmargin topmargin">Clear List</a>
+<a ng-show="chant.length > 0" href="plein/{{list}}" target="_blank" class="button button-border button-rounded button-large button-dark noleftmargin topmargin">Diaporama</a>
+
+</div>
+
+<div class="col_half nobottommargin topmargin-lg">
+
+  <img src="img/home/list.png" alt="Image" class="center-block">
+
+</div>
+
+</div>
+</div>
+
+</section>

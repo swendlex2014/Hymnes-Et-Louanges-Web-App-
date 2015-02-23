@@ -1,0 +1,57 @@
+<view-title>Contact - (H&amp;L)</view-title>
+ 
+ <section id="content">
+
+ 	<div class="section notopmargin nobottommargin">
+ 		<div class="container clearfix">
+
+ 		<div class="heading-block">
+ 					<h2>&Eacute;crivez. En tout temps!</h2>
+ 					<span>Questions, Commentaires, Suggestions</span>
+ 				</div>
+
+ 			<div class="col_half nobottommargin topmargin col_last">
+ 				
+ 				<form name="emailForm">
+ 					<div class="input-group input-group-lg" style="max-width:100%;">
+ 						<span class="input-group-addon"><i class="icon-user"></i></span>
+ 						<input class="form-control" name="name" required ng-model="mail.name" type="text" placeholder="Nom Pr&eacute;nom">
+ 					</div>
+ 					<br>
+
+ 					<div class="input-group input-group-lg" style="max-width:100%;">
+ 						<span class="input-group-addon"><i class="icon-email2"></i></span>
+ 						<input class="form-control" name="email" ng-disabled="!emailForm.name.$valid" required ng-model="mail.email" type="email" placeholder="Courrier" >
+ 					</div>
+ 					<br>
+
+ 					<div class="input-group input-group-lg" style="max-width:100%;">
+ 						<span class="input-group-addon"><i class="icon-pencil"></i></span>
+ 						<input class="form-control" name="subject" ng-disabled="!emailForm.email.$valid" required ng-model="mail.subject" type="text" placeholder="Sujet" >
+ 					</div>
+ 					<br>
+
+ 					<div style="max-width:100%;">
+ 						<textarea ng-model="mail.msg" ng-disabled="!emailForm.subject.$valid" class="form-control" cols="100" rows="10" placeholder="Message" required></textarea>
+ 						<br>
+ 					</div>
+ 					<br>
+
+ 					<div class="input-group input-group-lg" style="max-width:100%;">
+ 						<span class="input-group-addon" ng-show="sent.show">{{sent.msg}}</span>
+ 						<span class="input-group-btn">
+ 							<button ng-click="sendEmail()" ng-disabled="!emailForm.$valid" class="btn btn-default">Envoyez!</button>
+ 						</span>
+ 					</div>
+ 				</form>
+ 			</div>
+
+ 			<div class="col_half nobottommargin topmargin-lg">
+
+ 				<img src="img/contact.png" alt="Image" class="center-block">
+
+ 			</div>
+
+ 		</div>
+ 	</div>
+ </section>

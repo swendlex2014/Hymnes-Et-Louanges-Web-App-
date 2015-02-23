@@ -1,0 +1,60 @@
+<view-title>{{chant.t}} - (H&amp;L)</view-title>
+<section id="content">
+	<div class="content-wrap">
+		<div class="container clearfix">
+			<h1><strong>{{index}}</strong> - {{chant.t}}</h1>
+			<div class="col_three_fourth">
+				<div class="nomargin">
+					<a href="chant/{{chant.prev.n}}" ng-show="chant.prev != -1" class="social-icon si-wikipedia si-rounded" title="{{chant.prev.t}}">
+						<i class="icon-line2-arrow-left"></i>
+						<i class="icon-line2-arrow-left"></i>
+					</a>
+					<a target="_blank" ng-href="plein/{{index}}" class="social-icon si-wikipedia">
+						<i class="icon-line2-size-fullscreen"></i>
+						<i class="icon-line2-size-fullscreen"></i>
+					</a>
+					<a target="_blank" ng-click="playsong()" class="social-icon si-wikipedia">
+						<i id="play" class="icon-line2-control-play"></i>
+						<i id="play" class="icon-line2-control-play"></i>
+					</a>
+					<a target="_blank" ng-href="https://www.facebook.com/sharer/sharer.php?u={{loc}}" class="social-icon si-wikipedia">
+						<i class="icon-line2-social-facebook"></i>
+						<i class="icon-line2-social-facebook"></i>
+					</a>
+					<a target="_blank" ng-href="https://twitter.com/home?status={{loc}}" class="social-icon si-wikipedia">
+						<i class="icon-line2-social-twitter"></i>
+						<i class="icon-line2-social-twitter"></i>
+					</a>
+					<a target="_blank" ng-href="https://plus.google.com/share?url={{loc}}" class="social-icon si-wikipedia">
+						<i class="icon-google-plus"></i>
+						<i class="icon-google-plus"></i>
+					</a>
+					<a href="chant/{{chant.next.n}}" ng-show="chant.next != -1" class="social-icon si-wikipedia si-rounded" title="{{chant.next.t}}">
+						<i class="icon-line2-arrow-right"></i>
+						<i class="icon-line2-arrow-right"></i>
+					</a>
+				</div>
+				<div class="line bottommargin-sm"></div>
+				<div ng-repeat="w in chant.parts">
+					<h5 class="nomargin">{{w.p}}</h5>
+					<p><span ng-bind-html="w.c | sanitize"></span></p>
+				</div>
+			</div>
+			<div class="col_one_fourth col_last">
+				<audio id="song">
+				</audio>
+				<input type="text" ng-model="num" maxlength="3" ng-pattern="numOnly" ng-pattern-restrict value="" class="required sm-form-control lookupsong" placeholder="Entrez Un Num&eacute;ro" />
+<!-- HL adds -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5917480362683343"
+     data-ad-slot="7050072917"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+			</div>
+
+		</div>
+	</div>
+</section>

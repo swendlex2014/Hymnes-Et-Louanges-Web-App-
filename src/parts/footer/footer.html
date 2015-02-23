@@ -1,0 +1,34 @@
+<footer id="footer" class="dark">
+    <!-- Copyrights -->
+
+    <div id="copyrights">
+
+        <div class="container clearfix">
+
+            <div class="col_half">
+                <div class="copyrights-menu copyright-links clearfix">
+                    <a ng-href="{{w.r}}" ng-repeat="w in footer.menu">{{w.t}}&nbsp;</a>
+                </div>
+                <small>Wendly Saintil &copy; Tout Droits R&eacute;serv&eacute;s pour le d&eacute;sign du site. Toutes les musiques et les paroles restent la propriété de leurs propriétaires respectifs. Vous pouvez utiliser ce site comme une r&eacute;ference, et pour des buts educatifs seulement.
+                </small>
+                <br>
+                <div class="clearfix">
+                    <a ng-repeat="w in footer.links" target="{{w.t}}" ng-href="{{w.l}}" class="social-icon si-small si-borderless si-{{w.i}}">
+                        <i class="icon-{{w.i}}"></i>
+                        <i class="icon-{{w.i}}"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col_half col_last tright">
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
